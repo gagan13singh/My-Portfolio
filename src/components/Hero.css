@@ -40,11 +40,10 @@
   height: 250px;
   margin: 0 auto;
   overflow: hidden;
-
-  object-fit: cover;
+   align-self: auto;
+  object-fit: fill;
   object-position: center;
   border-radius: 30%;
-  overflow: hidden;
   border: 10px double var(--color-primary);
 }
 
@@ -55,8 +54,9 @@
     gap: 3rem;
   }
   .hero__image {
-    width: 18rem;
-    height: 24rem;
+    width: 252px;
+    height: 250px;
+    align-self: auto;
     
   }
 }

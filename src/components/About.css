@@ -13,33 +13,49 @@
   grid-template-columns: 35% 50%;
   gap: 15%;
 }
-
+.img{
+  border-radius: inherit;
+  height: 350px;
+  width: 350px;
+}
 .about__me {
-  width: 100px;
+  width: 200px;
   aspect-ratio: 1;
-  border-radius: 2rem;
+  border-radius: 30%;
   /* background: linear-gradient(45deg, transparent, var(--color-primary), transparent); */
   display: grid;
   place-items: center;
 }
 
 .about__me-image {
-  border-radius: 10% 10% 10% 10%;
-  overflow: hidden;
-  /* transform: rotate(10deg); */
+  border-radius: 30%;
+  border: 5px dashed #e45826;
+  /* overflow: hidden; */
   transition: var(--transition);
   position: center;
-  margin-left: 200px;
-  margin-top: auto;
-}
+  margin-left:auto;
+ 
+  width: 262px;
+ 
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+  height:260px
+} 
 
 .about__me-image:hover {
-  transform: rotate(0);
+  transform: rotate3d() ;
 }
 
 .about__content p {
-  margin-bottom: 2rem;
+  
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  /* margin-right: auto; */
+  margin-bottom: auto;
   color: var(--color-light);
+  align-content: center;
 }
 
 .about__content h3 {
