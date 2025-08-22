@@ -3,7 +3,7 @@ import './Projects.css';
 import ProjectCard from './ProjectCard';
 import { motion } from 'framer-motion';
 import Proj1Img from '../assets/project.png'; 
-
+import Proj2Img from '../assets/project1.png';
 const projectsData = [
   {
     id: 1,
@@ -13,6 +13,14 @@ const projectsData = [
     github: 'https://github.com',
     live: 'https://github.com',
   },
+  {
+    id: 2,
+    image: Proj2Img,
+    title: 'Weather Application',
+    description: 'Built a responsive weather application using React.js and OpenWeather API to fetch real-time weather data',
+    github: 'https://github.com',
+    live: 'https://github.com',
+  }
 ];
 
 
