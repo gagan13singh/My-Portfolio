@@ -41,6 +41,8 @@
   margin: 0 auto 15px;
   max-width: 100%;
   height: auto;
+  align-items: center;
+  align-self: center;
 }
 
 /* Hover effect */
@@ -102,3 +104,28 @@
     padding: 0 1rem;
   }
 }
+.about__me {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.about__me-image {
+  width: 220px;  /* adjust size as needed */
+  height: auto;
+  border-radius: 1rem;
+  border: 3px dashed var(--color-primary);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about__me-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
