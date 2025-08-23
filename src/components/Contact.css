@@ -28,20 +28,24 @@
   margin-bottom: 0.5rem;
   color: var(--color-primary);
 }
-
 .contact__option a {
   margin-top: 0.7rem;
   display: inline-block;
   font-size: 0.8rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: center;
 }
-@media screen and (max-width: 1024px) {
-  .contact__container {
-    width: 80%;
-  }
-}
+.contact__option {
+  background: var(--color-bg-variant);
+  padding: 1.2rem;
+  border-radius: 1.2rem;
+  text-align: center;
+  border: 1px solid transparent;
+  transition: var(--transition);
 
-@media screen and (max-width: 600px) {
-  .contact__container {
-    width: 90%;
-  }
+  
+  word-wrap: break-word;   
+  overflow-wrap: break-word;
+  word-break: break-word;  
 }
