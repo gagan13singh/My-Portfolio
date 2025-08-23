@@ -11,7 +11,7 @@ const projectsData = [
     title: 'Portfolio Website',
     description: 'A personal portfolio website created using React and Vite.',
     github: 'https://github.com',
-    live: 'https://github.com',
+    live: 'https://my-portfolio-gs.vercel.app/',
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const projectsData = [
     title: 'Weather Application',
     description: 'Built a responsive weather application using React.js and OpenWeather API to fetch real-time weather data',
     github: 'https://github.com',
-    live: 'https://github.com',
+    live: 'https://weather-app-gsingh.vercel.app/',
   }
 ];
 
