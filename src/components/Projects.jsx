@@ -3,7 +3,7 @@ import './Projects.css';
 import ProjectCard from './ProjectCard';
 import { motion } from 'framer-motion';
 import Proj1Img from '../assets/project.png'; 
-import Proj2Img from '../assets/project1.png';
+import Proj2Img from '../assets/project2.png';
 const projectsData = [
   {
     id: 1,
