@@ -2,6 +2,7 @@
 import React from 'react';
 import './ProjectCard.css';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
 const ProjectCard = ({ project }) => {
   if (!project) return null
@@ -16,8 +17,8 @@ const ProjectCard = ({ project }) => {
         <h3>{title}</h3>
         <p>{description}</p>
         <div className="project-card__links">
-          <a href={github} target="_blank" rel="noopener noreferrer"><FaGithub /> GitHub</a>
-          <a href={live} target="_blank" rel="noopener noreferrer"><FaExternalLinkAlt /> Live Demo</a>
+          {github && <a href={github} target="_blank" rel="noopener noreferrer"><FaGithub /> GitHub</a>}
+          {live && <a href={live} target="_blank" rel="noopener noreferrer"><FaExternalLinkAlt /> Live Demo</a>}
         </div>
       </div>
     </article>

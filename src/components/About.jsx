@@ -2,41 +2,77 @@ import React from 'react';
 import './About.css';
 import ProfileImage from "../assets/about.jpg"
 import { motion } from 'framer-motion';
+import { CheckCircle } from 'lucide-react';
 
 const About = () => {
+  const superpowers = [
+    "Frontend Development (React, JavaScript)",
+    "Problem Solving & DSA in Java",
+    "Social Media Strategy & Content Creation"
+  ];
+
   return (
     <section id="about">
       <h2 className="section__title">About Me</h2>
       <div className="container about__container">
-        <motion.div 
+        <motion.div
           className="about__me"
-          initial={{ opacity: 0, x: -100 }}
+          initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
           <div className="about__me-image">
-            <img src={ProfileImage} alt="About Me"/>
+            <img src={ProfileImage} alt="About Me" />
           </div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="about__content"
-          initial={{ opacity: 0, x: 100 }}
+          initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
           <p>
-            Hi! I'm a passionate software developer with a love for building things from scratch. My journey started with a fascination for how technology can solve real-world problems. I specialize in front-end development with React, but I'm always eager to learn new technologies and expand my skill set.
+            Hi! I'm Gagandeep Singh, a passionate Computer Science student at GGSIPU with a strong interest in frontend development and an aspiring journey into Data Science and Machine Learning. I completed my schooling at Modern School and have been actively building my skills in modern web technologies.
+          </p>
+          <p>
+            I recently mastered frontend development with React and JavaScript, and I'm currently diving deep into Data Structures and Algorithms using Java. Beyond coding, I served as Social Media Head at Nayi Disha NGO, where I led digital strategy and community engagement initiatives.
           </p>
           <h3>My Superpowers</h3>
           <ul>
-            <li>✨ Building clean, responsive UIs</li>
-            <li>🚀 Performance optimization</li>
-            <li>🧠 Problem-solving and debugging</li>
+            {superpowers.map((power, index) => (
+              <motion.li
+                key={index}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.2, duration: 0.5 }}
+                viewport={{ once: true }}
+              >
+                <CheckCircle size={20} className="text-primary" style={{ color: 'var(--color-primary)' }} /> {power}
+              </motion.li>
+            ))}
           </ul>
-           <a href="#contact" className="btn btn-primary" style={{ marginTop: '2.5rem' }}>Let's Talk</a>
+          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+            <motion.a
+              href="#contact"
+              className="btn btn-primary"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Let's Talk
+            </motion.a>
+            <motion.a
+              href="/resume.pdf"
+              download
+              className="btn"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Download Resume
+            </motion.a>
+          </div>
         </motion.div>
       </div>
     </section>

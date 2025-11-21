@@ -1,0 +1,28 @@
+.github__container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.github__placeholder {
+    background: var(--color-bg-variant);
+    padding: 3rem 2rem;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.github__placeholder p {
+    color: var(--color-light);
+    margin-bottom: 1rem;
+}
+
+.github__placeholder a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.github__placeholder a:hover {
+    color: var(--color-primary-variant);
+    text-decoration: underline;
+}

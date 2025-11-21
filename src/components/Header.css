@@ -1,5 +1,5 @@
 .header {
-  background: rgba(18, 18, 18, 0.8);
+  background: var(--color-nav-bg);
   backdrop-filter: blur(10px);
   padding: 1rem 0;
   position: fixed;
@@ -7,7 +7,8 @@
   left: 0;
   width: 100%;
   z-index: 100;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--color-border);
+  transition: background 400ms ease, border-color 400ms ease;
 }
 
 .header__container {
@@ -19,7 +20,7 @@
 .header__logo {
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--color-white);
+  color: var(--color-text);
 }
 
 .header__nav {
@@ -29,7 +30,7 @@
 
 .header__nav a {
   font-size: 1rem;
-  color: var(--color-light);
+  color: var(--color-text-light);
   transition: var(--transition);
 }
 
@@ -37,11 +38,30 @@
   color: var(--color-primary);
 }
 
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header__actions .theme-toggle {
+  position: static;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+}
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
 /* Toggle button (hamburger) */
 .header__toggle {
   display: none;
   background: transparent;
-  color: var(--color-white);
+  color: var(--color-text);
   font-size: 1.8rem;
   cursor: pointer;
   border: none;
@@ -58,8 +78,9 @@
     width: 100%;
     background: var(--color-bg-variant);
     padding: 1rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
-  
+
   .header__nav.active {
     display: flex;
     align-items: center;
@@ -67,6 +88,7 @@
 
   .header__nav a {
     padding: 0.5rem 0;
+    color: var(--color-text);
   }
 
   .header__toggle {
