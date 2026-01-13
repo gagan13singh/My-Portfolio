@@ -5,6 +5,12 @@ import { motion } from 'framer-motion';
 import Proj1Img from '../assets/project.png';
 import Proj2Img from '../assets/project2.png';
 import TrainSimImg from '../assets/train-simulation.png';
+import ExamGenImg from '../assets/exam-generator-landing.png';
+import EduSync1 from '../assets/edusync-1.png';
+import EduSync2 from '../assets/edusync-2.png';
+import EduSync3 from '../assets/edusync-3.png';
+import EduSync4 from '../assets/edusync-4.png';
+import EduSync5 from '../assets/edusync-5.png';
 
 const projectsData = [
   {
@@ -30,6 +36,25 @@ const projectsData = [
     image: TrainSimImg,
     title: 'Kalyan-Lonavala Train Simulation',
     description: 'An interactive train simulation system featuring AI-powered traffic optimization, real-time train control, and emergency dispatch management for the Kalyan-Lonavala railway section.',
+    category: 'Full Stack',
+    github: 'https://github.com',
+  },
+  {
+    id: 4,
+    image: ExamGenImg,
+    title: 'Exam-Oriented Question Generator',
+    description: 'AI-powered platform designed for CBSE students to create custom practice tests and generate exam-focused questions based on NCERT syllabus.',
+    github: 'https://github.com',
+
+    category: 'Full Stack'
+  },
+  {
+    id: 5,
+    images: [EduSync2, EduSync1, EduSync3, EduSync4, EduSync5],
+    title: 'EduSync - AI Powered LMS',
+    description: 'My best project till date. An AI-powered Learning Management System (LMS) designed to revolutionize education with smart scheduling, automated task management, and comprehensive analytics for students and teachers.',
+    github: 'https://github.com',
+
     category: 'Full Stack'
   }
 ];

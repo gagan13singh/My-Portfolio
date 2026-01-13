@@ -7,11 +7,20 @@ import { motion } from 'framer-motion';
 const ProjectCard = ({ project }) => {
   if (!project) return null
 
-  const { image, title, description, github, live } = project;
+  const { image, images, title, description, github, live } = project;
+
   return (
     <article className="project-card">
       <div className="project-card__image">
-        <img src={image} alt={title} />
+        {images ? (
+          <div className="project-card__carousel">
+            {images.map((img, index) => (
+              <img key={index} src={img} alt={`${title} screenshot ${index + 1}`} />
+            ))}
+          </div>
+        ) : (
+          <img src={image} alt={title} />
+        )}
       </div>
       <div className="project-card__content">
         <h3>{title}</h3>
