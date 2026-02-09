@@ -44,17 +44,17 @@ const projectsData = [
     image: ExamGenImg,
     title: 'Exam-Oriented Question Generator',
     description: 'AI-powered platform designed for CBSE students to create custom practice tests and generate exam-focused questions based on NCERT syllabus.',
-    github: 'https://github.com',
+    github: 'https://github.com/gagan13singh/CBSE-exam-oriented-Question-generator-ai-powered-',
 
     category: 'Full Stack'
   },
   {
     id: 5,
     images: [EduSync2, EduSync1, EduSync3, EduSync4, EduSync5],
-    title: 'EduSync - AI Powered LMS',
+    title: 'Scientia - AI Powered LMS',
     description: 'My best project till date. An AI-powered Learning Management System (LMS) designed to revolutionize education with smart scheduling, automated task management, and comprehensive analytics for students and teachers.',
-    github: 'https://github.com',
-
+    github: 'https://github.com/gagan13singh/Learning-Management-System',
+    live: 'https://scientia-lms.vercel.app',
     category: 'Full Stack'
   }
 ];
