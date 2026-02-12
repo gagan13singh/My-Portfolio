@@ -1,6 +1,6 @@
 .projects__container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2.5rem;
 }
 
@@ -27,4 +27,21 @@
 .filter-btn.active {
   background: var(--color-primary);
   color: #fff;
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+  .projects__container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .project-filters {
+    gap: 0.5rem;
+  }
+
+  .filter-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+  }
 }

@@ -101,12 +101,22 @@
 
 @media screen and (max-width: 600px) {
   .about__me {
-    width: 80%;
-    /* Increased width for mobile */
-    margin: 0 auto 3rem;
+    width: 70%;
+    margin: 0 auto 2.5rem;
+  }
+
+  .about__content p {
+    font-size: 0.95rem;
+    margin: 1rem 0 1.5rem;
   }
 
   .about__content ul {
     grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .section__title {
+    font-size: 1.7rem;
+    margin-bottom: 2rem;
   }
 }

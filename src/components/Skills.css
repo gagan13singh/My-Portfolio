@@ -31,3 +31,14 @@
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(228, 88, 38, 0.2);
 }
+
+@media screen and (max-width: 600px) {
+  .skills__container {
+    gap: 1rem;
+  }
+
+  .skill-item {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
