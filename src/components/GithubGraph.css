@@ -1,0 +1,46 @@
+.github__container {
+    width: 100%;
+    /* Ensure it takes full width of the container */
+    max-width: 1200px;
+    /* Or whatever your max-width is */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background: var(--color-bg-variant);
+    border-radius: 2rem;
+    border: 1px solid transparent;
+    transition: var(--transition);
+    overflow-x: auto;
+    /* Allow horizontal scrolling on small screens */
+}
+
+.github__container:hover {
+    background: transparent;
+    border-color: var(--color-primary-variant);
+    cursor: default;
+}
+
+/* Customize the calendar text color if needed, depending on your theme */
+.react-activity-calendar__count {
+    color: var(--color-light);
+}
+
+.react-activity-calendar__legend-colors text {
+    fill: var(--color-light);
+}
+
+/* Make it responsive */
+@media screen and (max-width: 1024px) {
+    .github__container {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .github__container {
+        width: 100%;
+        padding: 1rem;
+    }
+}
