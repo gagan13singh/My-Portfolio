@@ -11,8 +11,20 @@ import EduSync2 from '../assets/edusync-2.png';
 import EduSync3 from '../assets/edusync-3.png';
 import EduSync4 from '../assets/edusync-4.png';
 import EduSync5 from '../assets/edusync-5.png';
+import Sentry1 from '../assets/sentry-1.png';
+import Sentry2 from '../assets/sentry-2.png';
+import Sentry3 from '../assets/sentry-3.png';
 
 const projectsData = [
+  {
+    id: 6,
+    images: [Sentry1, Sentry2, Sentry3],
+    title: 'Sentry AI',
+    description: 'A fully autonomous, privacy-first conversational AI operating entirely within the browser. Features Device-Aware Orchestration with WebGPU and WASM fallback, enforcing a Logical Air-Gap with Service Workers for security.',
+    github: 'https://github.com/gagan13singh/sentry-ai',
+    live: 'https://sentry-frcrxbqhm-gagandeep-singh-s-projects-0f9588a0.vercel.app/',
+    category: 'Full Stack'
+  },
   {
     id: 1,
     image: Proj1Img,
@@ -42,10 +54,10 @@ const projectsData = [
   {
     id: 4,
     image: ExamGenImg,
-    title: 'Exam-Oriented Question Generator',
-    description: 'AI-powered platform designed for CBSE students to create custom practice tests and generate exam-focused questions based on NCERT syllabus.',
+    title: 'Vidyastra',
+    description: 'A next-generation AI Platform engineered for modern learning and preparation. Features a cinematic UI and interactive tests for students.',
     github: 'https://github.com/gagan13singh/CBSE-exam-oriented-Question-generator-ai-powered-',
-
+    live: 'https://vidyastra-prep.vercel.app/',
     category: 'Full Stack'
   },
   {

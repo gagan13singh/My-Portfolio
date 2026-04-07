@@ -6,6 +6,14 @@ import { motion } from 'framer-motion';
 const Experience = () => {
     const experiences = [
         {
+            type: 'work',
+            title: 'React Developer Intern',
+            company: 'Japneet (Plaza Enterprises)',
+            date: 'Feb 2026 - Present',
+            description: 'Contributing to AI-powered Gurbani audio transcription and real-time search system using React and TypeScript. Designing scalable UI components, integrating AI/ML services with frontend workflows, and participating in agile development.',
+            icon: <Briefcase />
+        },
+        {
             type: 'education',
             title: 'B.Tech in Computer Science & Engineering',
             company: 'Guru Gobind Singh Indraprastha University (GGSIPU)',
@@ -17,7 +25,7 @@ const Experience = () => {
             type: 'work',
             title: 'Social Media Head',
             company: 'Nayi Disha NGO',
-            date: 'Sep 2024 - Feb 2025',
+            date: 'Sep 2024 - Apr 2025',
             description: 'Led social media strategy and content creation for the NGO, managing online presence, engaging with the community, and promoting social initiatives to increase awareness and impact.',
             icon: <Briefcase />
         },

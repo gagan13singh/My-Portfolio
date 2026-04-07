@@ -64,8 +64,8 @@ const About = () => {
               Let's Talk
             </motion.a>
             <motion.a
-              href="/resume.pdf"
-              download
+              href="/resume.png"
+              download="Gagandeep_Singh_Resume.png"
               className="btn"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
