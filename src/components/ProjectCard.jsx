@@ -1,13 +1,11 @@
-
 import React from 'react';
 import './ProjectCard.css';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
-import { motion } from 'framer-motion';
 
 const ProjectCard = ({ project }) => {
-  if (!project) return null
+  if (!project) return null;
 
-  const { image, images, title, description, github, live } = project;
+  const { image, images, title, description, github, live, tags } = project;
 
   return (
     <article className="project-card">
@@ -25,9 +23,26 @@ const ProjectCard = ({ project }) => {
       <div className="project-card__content">
         <h3>{title}</h3>
         <p>{description}</p>
+
+        {tags && tags.length > 0 && (
+          <div className="project-card__tags">
+            {tags.map((tag, i) => (
+              <span key={i} className="project-card__tag">{tag}</span>
+            ))}
+          </div>
+        )}
+
         <div className="project-card__links">
-          {github && <a href={github} target="_blank" rel="noopener noreferrer"><FaGithub /> GitHub</a>}
-          {live && <a href={live} target="_blank" rel="noopener noreferrer"><FaExternalLinkAlt /> Live Demo</a>}
+          {github && (
+            <a href={github} target="_blank" rel="noopener noreferrer">
+              <FaGithub /> GitHub
+            </a>
+          )}
+          {live && (
+            <a href={live} target="_blank" rel="noopener noreferrer">
+              <FaExternalLinkAlt /> Live Demo
+            </a>
+          )}
         </div>
       </div>
     </article>

@@ -5,28 +5,31 @@ import { motion } from 'framer-motion';
 const blogData = [
     {
         id: 1,
-        title: 'Frontend Development',
-        excerpt: 'Mastered modern frontend technologies including React, JavaScript ES6+, responsive design, and component-based architecture.',
-        date: 'Sep - Oct 2024',
+        title: 'Full-Stack & AI Integration',
+        excerpt:
+            'Mastered full-stack development with React, Node.js, Express, and MongoDB. Built AI-powered apps integrating WebGPU/WASM LLMs, Groq API, and LLaMA — including an in-browser privacy-first AI and a full LMS platform.',
+        date: 'Sep 2024 – Present',
         status: 'Completed',
-        topics: ['React', 'JavaScript', 'CSS3', 'Responsive Design']
+        topics: ['React', 'Node.js', 'MongoDB', 'LLMs', 'WebGPU', 'REST APIs'],
     },
     {
         id: 2,
         title: 'Data Structures & Algorithms',
-        excerpt: 'Currently learning DSA in Java, focusing on problem-solving techniques, algorithmic thinking, and efficient code implementation.',
-        date: 'Nov 2024 - Present',
+        excerpt:
+            'Actively solving DSA problems in Java on LeetCode, covering Arrays, Hashing, Two Pointers, and Bit Manipulation. Building algorithmic thinking for product engineering and competitive programming.',
+        date: 'Nov 2024 – Present',
         status: 'In Progress',
-        topics: ['Java', 'DSA', 'Problem Solving', 'Algorithms']
+        topics: ['Java', 'Arrays', 'Hashing', 'Two Pointers', 'LeetCode'],
     },
     {
         id: 3,
         title: 'Data Science & Machine Learning',
-        excerpt: 'Next on my learning journey - diving deep into data science, machine learning algorithms, and AI applications.',
+        excerpt:
+            'Next chapter — diving deep into Python-based ML, statistical modeling, data pipelines, and neural networks. Goal: bridge my AI integration experience with foundational ML research skills.',
         date: 'Upcoming',
         status: 'Planned',
-        topics: ['Python', 'ML', 'Data Science', 'AI']
-    }
+        topics: ['Python', 'Scikit-learn', 'Pandas', 'Neural Networks', 'ML'],
+    },
 ];
 
 const Blog = () => {

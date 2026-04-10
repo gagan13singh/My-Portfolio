@@ -6,9 +6,19 @@ import { CheckCircle } from 'lucide-react';
 
 const About = () => {
   const superpowers = [
-    "Frontend Development (React, JavaScript)",
-    "Problem Solving & DSA in Java",
-    "Social Media Strategy & Content Creation"
+    "Full-Stack Development (React, Node.js, Express)",
+    "AI/ML Integration (LLMs, WebGPU, Groq, LLaMA)",
+    "Database Design (MongoDB, MySQL, Supabase)",
+    "DSA & Problem Solving in Java",
+    "Academic Mentoring & Communication",
+    "Social Media Strategy & Content Creation",
+  ];
+
+  const stats = [
+    { value: '9.27', label: 'CGPA / 10' },
+    { value: '6+', label: 'Projects Built' },
+    { value: '15-20', label: 'Students Tutored/yr' },
+    { value: '40%', label: 'Instagram Growth' },
   ];
 
   return (
@@ -35,11 +45,34 @@ const About = () => {
           viewport={{ once: true }}
         >
           <p>
-            Hi! I'm Gagandeep Singh, a passionate Computer Science student at GGSIPU with a strong interest in frontend development and an aspiring journey into Data Science and Machine Learning. I completed my schooling at Modern School and have been actively building my skills in modern web technologies.
+            Hi! I'm <strong>Gagandeep Singh</strong>, a Computer Science student at GGSIPU (CGPA: 9.27/10) and
+            React Developer Intern at Japneet (Plaza Enterprises), where I build AI-powered UIs and
+            integrate ML services. I was <strong>School Topper in Class XII (97%)</strong> and District Topper in Class X (99.4%).
           </p>
           <p>
-            I recently mastered frontend development with React and JavaScript, and I'm currently diving deep into Data Structures and Algorithms using Java. Beyond coding, I served as Social Media Head at Nayi Disha NGO, where I led digital strategy and community engagement initiatives.
+            I specialize in full-stack web development and AI integrations — from building in-browser LLM systems
+            with WebGPU/WASM to crafting full-scale Learning Management Systems with 40+ REST APIs.
+            I'm currently deepening my skills in Data Structures & Algorithms (Java) with my sights set on
+            Data Science and Machine Learning.
           </p>
+
+          {/* Stats row */}
+          <div className="about__stats">
+            {stats.map((stat, i) => (
+              <motion.div
+                key={i}
+                className="about__stat"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1, duration: 0.4 }}
+                viewport={{ once: true }}
+              >
+                <span className="stat__value">{stat.value}</span>
+                <span className="stat__label">{stat.label}</span>
+              </motion.div>
+            ))}
+          </div>
+
           <h3>My Superpowers</h3>
           <ul>
             {superpowers.map((power, index) => (
@@ -47,14 +80,15 @@ const About = () => {
                 key={index}
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.2, duration: 0.5 }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
                 viewport={{ once: true }}
               >
-                <CheckCircle size={20} className="text-primary" style={{ color: 'var(--color-primary)' }} /> {power}
+                <CheckCircle size={18} style={{ color: 'var(--color-primary)', flexShrink: 0 }} /> {power}
               </motion.li>
             ))}
           </ul>
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+
+          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '1.5rem' }}>
             <motion.a
               href="#contact"
               className="btn btn-primary"
