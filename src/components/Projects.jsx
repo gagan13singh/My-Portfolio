@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Projects.css';
 import ProjectCard from './ProjectCard';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Proj1Img from '../assets/project.png';
 import Proj2Img from '../assets/project2.png';
 import TrainSimImg from '../assets/train-simulation.png';
@@ -14,6 +14,9 @@ import EduSync5 from '../assets/edusync-5.png';
 import Sentry1 from '../assets/sentry-1.png';
 import Sentry2 from '../assets/sentry-2.png';
 import Sentry3 from '../assets/sentry-3.png';
+import School1 from '../assets/school-1.png';
+import School2 from '../assets/school-2.png';
+import School3 from '../assets/school-3.png';
 
 const projectsData = [
   {
@@ -50,6 +53,17 @@ const projectsData = [
     tags: ['React', 'Node.js', 'LLaMA', 'Groq', 'Supabase'],
   },
   {
+    id: 7,
+    images: [School1, School2, School3],
+    title: 'Happy Day School – Static Website',
+    description:
+      'A clean, professional static website for Happy Day School, Delhi. Features an attractive landing page with school highlights, curriculum overview, admission info, and a contact section. Designed for maximum clarity and parent-friendly navigation.',
+    github: 'https://github.com/gagan13singh/happy-day-school',
+    live: 'https://happy-day-school.vercel.app/',
+    category: 'Static',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Responsive'],
+  },
+  {
     id: 3,
     image: TrainSimImg,
     title: 'Kalyan–Lonavala Train Simulation',
@@ -83,6 +97,35 @@ const projectsData = [
   },
 ];
 
+const categories = ['All', 'React', 'Full Stack', 'Static'];
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 32 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.25, 0.46, 0.45, 0.94],
+    },
+  },
+  exit: {
+    opacity: 0,
+    y: -16,
+    scale: 0.97,
+    transition: { duration: 0.25, ease: 'easeIn' },
+  },
+};
+
 const Projects = () => {
   const [filter, setFilter] = useState('All');
 
@@ -92,46 +135,83 @@ const Projects = () => {
       : projectsData.filter((project) => project.category === filter);
 
   return (
-    <section id="projects">
-      <h2 className="section__title">My Recent Work</h2>
+    <section id="projects" className="projects-section">
+      {/* Section Header */}
+      <motion.div
+        className="projects-header"
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+      >
+        <span className="projects-eyebrow">What I've Built</span>
+        <h2 className="section__title projects__title">My Recent Work</h2>
+        <p className="projects-subtitle">
+          A curated collection of projects I'm proud of — from AI-driven apps to full-stack platforms.
+        </p>
+      </motion.div>
 
-      <div className="project-filters">
-        {['All', 'React', 'Full Stack'].map((category) => (
+      {/* Filter Tabs */}
+      <motion.div
+        className="project-filters"
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-60px' }}
+        transition={{ duration: 0.5, delay: 0.15, ease: 'easeOut' }}
+      >
+        {categories.map((category) => (
           <button
             key={category}
             className={`filter-btn ${filter === category ? 'active' : ''}`}
             onClick={() => setFilter(category)}
+            aria-pressed={filter === category}
           >
             {category}
+            {filter === category && (
+              <motion.span
+                className="filter-btn__indicator"
+                layoutId="activeFilterIndicator"
+                transition={{ type: 'spring', stiffness: 380, damping: 32 }}
+              />
+            )}
           </button>
-        ))}
-      </div>
-
-      <motion.div
-        className="container projects__container"
-        layout
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-      >
-        {filteredProjects.map((project) => (
-          <motion.div
-            key={project.id}
-            layout
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.8 }}
-            transition={{ duration: 0.3 }}
-          >
-            <ProjectCard project={project} />
-          </motion.div>
         ))}
       </motion.div>
 
-      <br />
-      <p style={{ textAlign: 'center', color: 'var(--color-text-light)', marginTop: '1rem' }}>
+      {/* Project Grid */}
+      <div className="container projects__container">
+        <AnimatePresence mode="popLayout">
+          <motion.div
+            key={filter}
+            className="projects__grid"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+          >
+            {filteredProjects.map((project) => (
+              <motion.div
+                key={project.id}
+                variants={cardVariants}
+                layout
+              >
+                <ProjectCard project={project} />
+              </motion.div>
+            ))}
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      {/* Footer note */}
+      <motion.p
+        className="projects-footer-note"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+      >
         🚀 More exciting projects coming soon — stay tuned!
-      </p>
+      </motion.p>
     </section>
   );
 };

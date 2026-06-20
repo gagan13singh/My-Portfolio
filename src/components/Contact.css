@@ -133,37 +133,81 @@ form .btn:hover {
 @media screen and (max-width: 1024px) {
   .contact__container {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
-    width: 85%;
+    gap: 2rem;
+    width: 90%;
   }
 
   .contact__options {
     grid-template-columns: repeat(3, 1fr);
     display: grid;
-    gap: 1.5rem;
+    gap: 1rem;
     height: auto;
   }
 
   .contact__option {
     flex: initial;
+    padding: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact__options {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+  }
+
+  .contact__option h4 {
+    font-size: 0.95rem;
+  }
+
+  .contact__option h5 {
+    font-size: 0.8rem;
   }
 }
 
 @media screen and (max-width: 600px) {
   .contact__container {
-    width: 90%;
+    width: 95%;
   }
 
   .contact__options {
     grid-template-columns: 1fr;
+    gap: 0.8rem;
   }
 
   form {
     padding: 1.5rem;
+    gap: 1rem;
   }
 
   input,
   textarea {
-    padding: 1rem;
+    padding: 0.9rem;
+    font-size: 0.95rem;
+  }
+
+  .contact__option-icon {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .contact__container {
+    width: 100%;
+  }
+
+  form {
+    padding: 1.2rem;
+  }
+
+  input,
+  textarea {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  form .btn {
+    padding: 0.9rem;
   }
 }

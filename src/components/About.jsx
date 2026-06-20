@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './About.css';
 import ProfileImage from "../assets/about.jpg"
 import { motion } from 'framer-motion';
@@ -21,12 +21,46 @@ const About = () => {
     { value: '40%', label: 'Instagram Growth' },
   ];
 
+  const tiltRef = useRef(null);
+
+  // Subtle 3D Tilt handlers for the profile image card
+  const handleMouseMove = (e) => {
+    if (!tiltRef.current) return;
+    const card = tiltRef.current;
+    const box = card.getBoundingClientRect();
+    const x = e.clientX - box.left;
+    const y = e.clientY - box.top;
+
+    const tiltX = ((y - box.height / 2) / (box.height / 2)) * -3.5;
+    const tiltY = ((x - box.width / 2) / (box.width / 2)) * 3.5;
+
+    requestAnimationFrame(() => {
+      card.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+    });
+  };
+
+  const handleMouseEnter = () => {
+    if (!tiltRef.current) return;
+    tiltRef.current.style.transition = 'box-shadow 300ms ease, border-color 300ms ease';
+  };
+
+  const handleMouseLeave = () => {
+    if (!tiltRef.current) return;
+    const card = tiltRef.current;
+    card.style.transition = 'transform 450ms cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 300ms ease, border-color 300ms ease';
+    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+  };
+
   return (
     <section id="about">
       <h2 className="section__title">About Me</h2>
       <div className="container about__container">
         <motion.div
           className="about__me"
+          ref={tiltRef}
+          onMouseMove={handleMouseMove}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}

@@ -8,7 +8,7 @@ const ThemeToggle = () => {
 
     return (
         <motion.button
-            onClick={toggleTheme}
+            onClick={(e) => toggleTheme(e)}
             className="theme-toggle"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}

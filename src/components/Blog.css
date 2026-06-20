@@ -126,9 +126,33 @@
 @media screen and (max-width: 600px) {
     .blog__container {
         grid-template-columns: 1fr;
+        gap: 1.2rem;
     }
 
     .blog__card {
-        padding: 1.5rem;
+        padding: 1.4rem;
+    }
+
+    .blog__title {
+        font-size: 1.15rem;
+    }
+
+    .blog__excerpt {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .blog__card {
+        padding: 1.1rem;
+    }
+
+    .blog__title {
+        font-size: 1.05rem;
+    }
+
+    .blog__topic {
+        font-size: 0.72rem;
+        padding: 0.3rem 0.6rem;
     }
 }
